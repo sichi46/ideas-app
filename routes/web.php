@@ -1,15 +1,18 @@
-<?php
+    <?php
 
-use App\Http\Controllers\DashboardController;
-use Illuminate\Support\Facades\Route;
+    use App\Http\Controllers\DashboardController;
+    use Illuminate\Support\Facades\Route;
 
-// Pages to create 
+    // Pages to create 
 
-//  / or home
+    //  / or home
 
-// feed
+    // feed
 
-// profile
+    // profile
 
-Route::get('/', [DashboardController::class, 'index      
-']);
+    Route::get('/', [DashboardController::class, 'index']);
+
+    Route::get('/terms', function () {
+        return view('terms');
+    });
