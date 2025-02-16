@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Idea;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -13,21 +14,12 @@ class DashboardController extends Controller
 
         // assume the following mock data is being gotten from somewhere
 
-        $users = [
-            [
-                'name' => 'John Doe',
-                'age' => 25,
-            ],
-            [
-                'name' => 'Jane Doe',
-                'age' => 24,
-            ],
-            [
-                'name' => 'John Smith',
-                'age' => 17,
-            ]
-        ];
 
-        return view('dashboard', ['users' => $users]);
+        $idea = new Idea();
+        $idea->content = 'test';
+        $idea->likes = 0;
+        $idea->save();
+
+        return view('dashboard');
     }
 }
